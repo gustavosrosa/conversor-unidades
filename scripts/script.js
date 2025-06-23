@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     document.getElementById("quantity").addEventListener("input", (e) => {
-        state.quantityValid = verifyIfFieldQtdValid(e);
+        state.quantityValid = verifyIfFieldQtdValid(e); 
+        refactorInputQuantity(e);
         tryShowItems();
     });
 
@@ -28,12 +29,12 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function converter() {
-    const quantity = document.getElementById("quantity").value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    const quantity = document.getElementById("quantity").value;
     const optionSelectedOf = document.getElementById("of").value;
     const optionSelectedFor = document.getElementById("for").value;
 
     let quantityConvertedToDefaultMeters = convertToDefaultMeters(quantity, optionSelectedOf);
-    let convertToUnit = convertToSwitchedUnit(quantityConvertedToDefaultMeters, optionSelectedFor).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    let convertToUnit = convertToSwitchedUnit(quantityConvertedToDefaultMeters, optionSelectedFor);
 
     document.getElementById("result").value = convertToUnit;
 
@@ -80,9 +81,21 @@ function innerResultInFull(initial, final) {
     const optionOf = document.getElementById("of").selectedOptions[0].textContent;
     const optionFor = document.getElementById("for").selectedOptions[0].textContent;
     document.getElementById("inFull").innerHTML = `<p>Ou seja, ${initial} ${optionOf.toLowerCase()} são ${final} ${optionFor.toLowerCase()}!</p>`;
+    document.getElementById("inFull").style.display = "block";
 }
 
-function showResultFooter(boolean) {
-    if (boolean) document.getElementById("inFull").style.display = "none";
-    else document.getElementById("inFull").style.display = "block";
+function showResultFooter(errorInValidation) {
+    if (errorInValidation) {
+        document.getElementById("inFull").style.display = "none";
+         document.getElementById("result").value = null;
+    }
+}
+
+function refactorInputQuantity(e) {
+
+    if (e.target.value.startsWith("0")) { // Remover zeros à esquerda
+      e.target.value = e.target.value.replace(/^0+/, "");
+    }
+
+    e.target.value = e.target.value.slice(0,5); // Até 5 casas
 }
