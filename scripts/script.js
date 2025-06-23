@@ -34,7 +34,7 @@ function converter() {
     const optionSelectedFor = document.getElementById("for").value;
 
     let quantityConvertedToDefaultMeters = convertToDefaultMeters(quantity, optionSelectedOf);
-    let convertToUnit = convertToSwitchedUnit(quantityConvertedToDefaultMeters, optionSelectedFor);
+    let convertToUnit = convertToLocaleBR(convertToSwitchedUnit(quantityConvertedToDefaultMeters, optionSelectedFor));
 
     document.getElementById("result").value = convertToUnit;
 
@@ -87,7 +87,7 @@ function innerResultInFull(initial, final) {
 function showResultFooter(errorInValidation) {
     if (errorInValidation) {
         document.getElementById("inFull").style.display = "none";
-         document.getElementById("result").value = null;
+        document.getElementById("result").value = null;
     }
 }
 
@@ -98,4 +98,13 @@ function refactorInputQuantity(e) {
     }
 
     e.target.value = e.target.value.slice(0,5); // Até 5 casas
+
+}
+
+function convertToLocaleBR(number) {
+    return number.toLocaleString("pt-BR", {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 20,
+        }
+    );
 }
