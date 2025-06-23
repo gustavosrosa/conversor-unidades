@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Conversor de Unidades</title>
+    <script src="./scripts/script.js" defer></script>
+</head>
+<body>
+    <section class="container">
+        <h1>Conversor de Unidades</h1>
+
+        <form class="form-converter">
+            
+            <section class="form-attr input-form">
+                <label for="quantity">Digite a quantidade:</label>
+                <input class="inp input-attr" id="quantity" type="number" min="1">
+            </section>
+
+            <section class="form-attr input-form">
+                <label for="of">De:</label>
+
+                <select class="inp input-attr" name="of" id="of" >
+                    <option value="meterOf">Metro(s)</option>
+                    <option value="kilometerOf">Quilômetro(s)</option>
+                    <option value="centimeterOf">Centímetro(s)</option>
+                    <option value="milimeterOf">Milímetro(s)</option>
+                </select>
+            </section>
+
+            <section class="form-attr input-form">
+                <label for="for">Para:</label>
+
+                <select class="inp input-attr" name="for" id="for">
+                    <option value="meterFor">Metro(s)</option>
+                    <option value="kilometerFor" selected>Quilômetro(s)</option>
+                    <option value="centimeterFor">Centímetro(s)</option>
+                    <option value="milimeterFor">Milímetro(s)</option>
+                </select>
+            </section>
+
+            <button type="button" id="submit-button" class="submit-button" onclick="converter()" disabled>Converter</button>
+
+            <section class="form-attr output-form">
+                <label for="result">Resultado:</label>
+                <input class="inp input-attr" type="text" id="result" disabled>
+            </section>
+
+            <div id="inFull"></div>
+
+        </form>
+    </section>    
+</body>
+</html>
