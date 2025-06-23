@@ -62,3 +62,8 @@ body {
     border-radius: .25em;
 }
 
+.submit-button[disabled] {
+    transition-delay: .125s;
+    background-color: gray;
+}
+

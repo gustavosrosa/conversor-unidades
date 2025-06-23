@@ -15,7 +15,7 @@
             
             <section class="form-attr input-form">
                 <label for="quantity">Digite a quantidade:</label>
-                <input class="inp input-attr" type="text" id="quantity">
+                <input class="inp input-attr" id="quantity" type="number" min="1">
             </section>
 
             <section class="form-attr input-form">
@@ -34,13 +34,13 @@
 
                 <select class="inp input-attr" name="for" id="for">
                     <option value="meterFor">Metro(s)</option>
-                    <option value="kilometerFor">Quilômetro(s)</option>
+                    <option value="kilometerFor" selected>Quilômetro(s)</option>
                     <option value="centimeterFor">Centímetro(s)</option>
                     <option value="milimeterFor">Milímetro(s)</option>
                 </select>
             </section>
 
-            <button type="button" class="submit-button">Converter</button>
+            <button type="button" id="submit-button" class="submit-button" onclick="converter()" disabled>Converter</button>
 
             <section class="form-attr output-form">
                 <label for="result">Resultado:</label>
