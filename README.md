@@ -8,7 +8,7 @@ Para utilizar o conversor, siga os passos abaixo:
 - Selecione as unidades de/para (lembrando que a aplicação não permite conversão de uma unidade de medida para uma mesma unidade de medida!)
 - Clique em converter e veja a mágica acontecer!
 
-É um projeto bem simples e eficiente para seguir a lista de 20 projetos do curso do Matheus, segue URL: (Curso)[https://www.udemy.com/course/20-projetos-de-javascript-aprenda-html-css-e-javascript/]
+É um projeto bem simples e eficiente para seguir a lista de 20 projetos do curso do Matheus, segue URL: [https://www.udemy.com/course/20-projetos-de-javascript-aprenda-html-css-e-javascript/]
 
 Eu segui apenas o protótipo e fiz tudo sozinho!
 
@@ -16,4 +16,4 @@ Qualquer sugestão, comentário... Fique à vontade!
 
 No meu perfil tem todos os meus links, entre em contato comigo! Serei grato em recepcioná-lo(a)!
 
-Projeto deployado: (Projeto)[https://conversor-unidades-omega.vercel.app/]
+Projeto deployado: [https://conversor-unidades-omega.vercel.app/]
