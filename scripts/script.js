@@ -77,10 +77,10 @@ function showItems(boolean) {
     showResultFooter(boolean);
 }
 
-function innerResultInFull(initial, final) {
+function innerResultInFull(initial, final) {;
     const optionOf = document.getElementById("of").selectedOptions[0].textContent;
     const optionFor = document.getElementById("for").selectedOptions[0].textContent;
-    document.getElementById("inFull").innerHTML = `<p>Ou seja, ${initial} ${optionOf.toLowerCase()} são ${final} ${optionFor.toLowerCase()}!</p>`;
+    document.getElementById("inFull").innerHTML = `<p>Ou seja, ${convertToLocaleBR(parseInt(initial))} ${optionOf.toLowerCase()} são ${final} ${optionFor.toLowerCase()}!</p>`;
     document.getElementById("inFull").style.display = "block";
 }
 

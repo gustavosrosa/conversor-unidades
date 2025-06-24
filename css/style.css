@@ -72,11 +72,13 @@ body {
     background-color: gray;
 }
 
-
-
 #inFull {
     font-size: .75em;
     text-align: center;
     justify-content: center;
+}
+
+.branding-text {
+    font-size:.75em;
 }
 
